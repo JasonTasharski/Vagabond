@@ -1,56 +1,38 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  get 'sessions/new'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get 'sessions/create'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'sessions/destroy'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get 'home/index'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  #signup routes
+  get "/signup", to: "users#new"
+  get "/profile", to: "users#show"
+  resources :users, except: [:new, :show]
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  #session routes
+  get "/login", to: "sessions#new"
+  get "/logout", to: "sessions#destroy"
+  resources :sessions, only: [:create]
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  #other shit
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+  root to: "home#index"
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+#    signup GET    /signup(.:format)         users#new
+#   profile GET    /profile(.:format)        users#show
+#     users GET    /users(.:format)          users#index
+#           POST   /users(.:format)          users#create
+# edit_user GET    /users/:id/edit(.:format) users#edit
+#      user PATCH  /users/:id(.:format)      users#update
+#           PUT    /users/:id(.:format)      users#update
+#           DELETE /users/:id(.:format)      users#destroy
+#     login GET    /login(.:format)          sessions#new
+#    logout GET    /logout(.:format)         sessions#destroy
+#  sessions POST   /sessions(.:format)       sessions#create
+#      root GET    /                         home#index
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+
 end

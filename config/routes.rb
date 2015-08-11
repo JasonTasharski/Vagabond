@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
 
-  get 'sessions/create'
+  #route to edit form
 
-  get 'sessions/destroy'
-
-  get 'home/index'
+  #route to update database
+  put "profile/update", to: "profile#update"
 
   #signup routes
   get "/signup", to: "users#new"

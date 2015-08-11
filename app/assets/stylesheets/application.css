@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+/*Colors:
+#edeecb <= Pale yellow background color
+#ff0000 <= Logo Red*/
+
+@font-face {
+    font-family: logo;
+    src: url(/fonts/DEFTONE.ttf);
+}
+
+body {
+	background-color: #edeecb; 
+}
+
+.navbar-brand.logo {
+	font-family: logo;
+	font-size: 3em;
+}
+
+.cover-heading {
+	font-family: logo;
+	font-size: 9em;
+	color: #ff0000; 
+}

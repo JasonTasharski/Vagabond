@@ -7,13 +7,21 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <!-- mapbox js -->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+  
+  <!-- mapbox link -->
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet'/>
+
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 
 </head>
 <body>
-<nav class="navbar navbar-default" role="banner">
+<nav class="navbar navbar-inverse" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,7 +30,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">Vagabond</a>
+      <a href="/" class="navbar-brand logo">V</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
@@ -30,7 +38,7 @@
           <% if current_user %> 
           <a href="/profile">Profile</a> 
           <% else %>  
-          <a href="/signup">Sign Up</a> 
+          <a href="/signup">Become a writer</a> 
           <% end %> 
         </li>
         <li>

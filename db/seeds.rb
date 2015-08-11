@@ -11,17 +11,19 @@
   	user_params[:first_name] = FFaker::Name.first_name
   	user_params[:last_name] = FFaker::Name.last_name
   	user_params[:email] = FFaker::Internet.email
-  	user_params[:password] = FFaker::Lorem.words(2).join
+  	user_params[:password] = "password"
   	user_params[:password_confirmation] = user_params[:password]
   	@user = User.create(user_params)
   end
 
 
   User.all.each do |user|
-    post_params = Hash.new
-    post_params[:title] = FFaker::Lorem.words(4)
-    post_params[:body] = FFaker::HipsterIpsum.sentence(5)
-    @post = user.posts.create(post_params)
+    3.times do
+      post_params = Hash.new
+      post_params[:title] = FFaker::HipsterIpsum.sentence(1)
+      post_params[:body] = FFaker::HipsterIpsum.sentence(5)
+      @post = user.posts.create(post_params)
+    end
   end
 
 

@@ -19,7 +19,6 @@ RSpec.describe User, type: :model do
   	end
 
   	it "redirects to profile page" do
-  		get :show
   		expect(response).to render_template(:show)
   	end
   end

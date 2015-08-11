@@ -1,2 +1,9 @@
 <h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
+<% if current_user %>
+<a href="/profile/<%= current_user.username %>/posts/new">Write a post</a>
+<% else %>
+<a href="/login">Log in to write a post</a>
+<% end %>
+<% @posts.each do |p| %>
+<p><%= link_to p.title, user_post_path(p.user, p) %></p>
+<% end %>

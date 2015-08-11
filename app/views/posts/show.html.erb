@@ -1,1 +1,6 @@
-show.html.erb
+
+<%= @post.title %><br>
+<%= @post.body %><br>
+<%= @post.user_id %><br>
+<hr>
+<%= link_to "All my posts", user_posts_path(@user)%>

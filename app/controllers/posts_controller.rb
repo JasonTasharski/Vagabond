@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 	def index #DONT REALLY NEED... yet
+		@user = current_user
+		@posts = current_user.posts.all
 		render :index
 	end
 
@@ -22,19 +24,22 @@ class PostsController < ApplicationController
 	end
 
 	def show
+		@user = current_user
 		@post = Post.find(params[:id])
 		render :show
 	end
 
 	def update
+		@user = current_user
 		@post = Post.find(params[:id])
 		@post.update_attributes(post_params)
-		redirect_to profile_path
+		redirect_to user_posts_path(@user)
 	end
 
 	def destroy
+		@user = current_user
 		Post.find(params[:id]).destroy
-		redirect_to profile_path
+		redirect_to user_posts_path(@user)
 	end
 
 	private

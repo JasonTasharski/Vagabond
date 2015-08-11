@@ -27,6 +27,7 @@
     end
   end
 
+
 san_francisco = Hash.new
 san_francisco[:city_name] = "San Francisco"
 san_francisco[:short_name] = "sf"

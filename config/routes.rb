@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'cities/show'
-
   root to: "home#index"
 
   #signup routes
@@ -17,7 +15,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   #other shit
 
-  resources :cities, only: [:show]#, param: :short_name
+  resources :cities, only: [:show], param: :short_name
 
 end
 

@@ -22,6 +22,7 @@
       post_params = Hash.new
       post_params[:title] = FFaker::HipsterIpsum.sentence(1)
       post_params[:body] = FFaker::HipsterIpsum.sentence(5)
+      post_params[:city_id] = 1
       @post = user.posts.create(post_params)
     end
   end

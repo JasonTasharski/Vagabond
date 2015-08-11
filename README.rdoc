@@ -1,3 +1,7 @@
 #Vagabond
 
-
+If new branch:
+* rake db:checkout -b [NAME OF NEW BRANCH]
+Continue:
+* rake db:migrate
+*rake db:seed

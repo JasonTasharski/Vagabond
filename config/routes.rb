@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  #route to edit form
+
+  #route to update database
+  put "profile/update", to: "profile#update"
 
 
   #signup routes

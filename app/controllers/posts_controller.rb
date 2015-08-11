@@ -4,8 +4,9 @@ class PostsController < ApplicationController
 	end
 
 	def create
+		user = current_user
 		post = current_user.posts.create(post_params)
-		redirect_to user_post_path
+		redirect_to user_post_path(user, post)
 	end
 
 	def new
@@ -15,6 +16,8 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		@user = current_user
+		@post = Post.find(params[:id])
 		render :edit
 	end
 

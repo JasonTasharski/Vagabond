@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  
-  #route to edit form
-  get "/users/:id/edit", to: "users#edit"
 
-  #route to update database
-  put "/users/:id", to: "users#update"
+  get 'cities/show'
 
+  root to: "home#index"
 
   #signup routes
   get "/signup", to: "users#new"
@@ -20,13 +17,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   #other shit
 
-  root to: "home#index"
-
+  resources :cities, only: [:show]#, param: :short_name
 
 end
 
-#        Prefix Verb   URI Pattern                                      Controller#Action
-#                PUT    /users/:id(.:format)                             users#update
 #         signup GET    /signup(.:format)                                users#new
 #        profile GET    /profile(.:format)                               users#show
 #     user_posts GET    /profile/:user_username/posts(.:format)          posts#index
@@ -46,6 +40,7 @@ end
 #          login GET    /login(.:format)                                 sessions#new
 #         logout GET    /logout(.:format)                                sessions#destroy
 #       sessions POST   /sessions(.:format)                              sessions#create
+#           city GET    /cities/:id(.:format)                            cities#show
 #           root GET    /                                                home#index
 
 

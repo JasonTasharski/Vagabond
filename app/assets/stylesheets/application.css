@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+@font-face {
+    font-family: logo;
+    src: url(/fonts/DEFTONE.ttf);
+}
+
+.navbar-brand.logo {
+	font-family: logo;
+	font-size: 3em;
+}
+
+.cover-heading {
+	font-family: logo;
+	font-size: 9em;
+}

@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 
   #show profile page
   def show
+    @posts = Post.all
   	@user = current_user
   	render :show
   end

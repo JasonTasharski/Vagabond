@@ -36,12 +36,10 @@
         <li>
           <% if current_user %>
           <a href="/logout">Log Out</a>
+          <a href="/profile/<%= current_user.username %>/posts/new">Write a post</a>
           <% else %>   
           <a href="/login">Log In</a>
           <% end %>
-        </li>
-        <li>
-          <a href="/profile/<%= current_user.username %>/posts/new">Write a post</a>
         </li>
       </ul>
       <ul class="nav navbar-right navbar-nav">

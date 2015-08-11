@@ -26,8 +26,7 @@ class UsersController < ApplicationController
 
   #update the profile page
   def update
-    
-    
+    # if session[:user_id] = @user.id    
   end
 
   #show profile page

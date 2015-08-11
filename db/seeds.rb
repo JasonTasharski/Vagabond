@@ -16,3 +16,12 @@
   	@user = User.create(user_params)
   end
 
+
+  User.all.each do |user|
+    post_params = Hash.new
+    post_params[:title] = FFaker::Lorem.words(4)
+    post_params[:body] = FFaker::HipsterIpsum.sentence(5)
+    @post = user.posts.create(post_params)
+  end
+
+

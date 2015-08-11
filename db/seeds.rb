@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 	5.times do 
 		user_params = Hash.new
-  	user_params[:username] = FFaker::Lorem.words(1)
+  	user_params[:username] = FFaker::Name.first_name
   	user_params[:first_name] = FFaker::Name.first_name
   	user_params[:last_name] = FFaker::Name.last_name
   	user_params[:email] = FFaker::Internet.email
@@ -27,4 +27,9 @@
     end
   end
 
+san_francisco = Hash.new
+san_francisco[:city_name] = "San Francisco"
+san_francisco[:short_name] = "sf"
+san_francisco[:city_photo] = "http://www.sanfrancisco.travel/sites/sftraveldev.prod.acquia-sites.com/files/SanFrancisco_0.jpg"
+@city = City.create(san_francisco)
 

@@ -4,7 +4,8 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1><%= current_user.first_name %><%= " " %> <%= current_user.last_name %>
+        <h1><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
+          <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_user_path(:id => @user.id)%></button></span>
           <p class="lead"><%= current_user.username %></p>
           <p class="lead"><%= current_user.current_city %></p>
           <p class="lead">Joined Since: <%= current_user.created_at.strftime("%b. %Y") %></p>

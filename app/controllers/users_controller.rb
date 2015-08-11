@@ -26,7 +26,15 @@ class UsersController < ApplicationController
 
   #update the profile page
   def update
-    # if session[:user_id] = @user.id    
+    if current_user
+      #get updated data
+      updated_attributes = params.require(:user).permit(:username, :first_name, :last_name, :current_city)
+      # update the creature
+      current_user.update_attributes(updated_attributes)
+      redirect_to profile_path
+    else
+      redirect_to root_path
+    end
   end
 
   #show profile page

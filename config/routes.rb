@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   #route to edit form
-
+  get "/users/:id/edit", to: "users#edit"
 
   #route to update database
   put "/users/:id", to: "users#update"

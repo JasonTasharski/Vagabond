@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #signup routes
   get "/signup", to: "users#new"
   get "/profile", to: "users#show"
-  resources :users, except: [:new, :show] do 
+  resources :users, except: [:new, :show], path: "/profile", param: :username do 
     resources :posts
   end
 
@@ -25,27 +25,28 @@ Rails.application.routes.draw do
 
 end
 
-#         Prefix Verb   URI Pattern                              Controller#Action
-#         signup GET    /signup(.:format)                        users#new
-#        profile GET    /profile(.:format)                       users#show
-#     user_posts GET    /users/:user_id/posts(.:format)          posts#index
-#                POST   /users/:user_id/posts(.:format)          posts#create
-#  new_user_post GET    /users/:user_id/posts/new(.:format)      posts#new
-# edit_user_post GET    /users/:user_id/posts/:id/edit(.:format) posts#edit
-#      user_post GET    /users/:user_id/posts/:id(.:format)      posts#show
-#                PATCH  /users/:user_id/posts/:id(.:format)      posts#update
-#                PUT    /users/:user_id/posts/:id(.:format)      posts#update
-#                DELETE /users/:user_id/posts/:id(.:format)      posts#destroy
-#          users GET    /users(.:format)                         users#index
-#                POST   /users(.:format)                         users#create
-#      edit_user GET    /users/:id/edit(.:format)                users#edit
-#           user PATCH  /users/:id(.:format)                     users#update
-#                PUT    /users/:id(.:format)                     users#update
-#                DELETE /users/:id(.:format)                     users#destroy
-#          login GET    /login(.:format)                         sessions#new
-#         logout GET    /logout(.:format)                        sessions#destroy
-#       sessions POST   /sessions(.:format)                      sessions#create
-#           root GET    /                                        home#index
+#        Prefix Verb   URI Pattern                                      Controller#Action
+#                PUT    /users/:id(.:format)                             users#update
+#         signup GET    /signup(.:format)                                users#new
+#        profile GET    /profile(.:format)                               users#show
+#     user_posts GET    /profile/:user_username/posts(.:format)          posts#index
+#                POST   /profile/:user_username/posts(.:format)          posts#create
+#  new_user_post GET    /profile/:user_username/posts/new(.:format)      posts#new
+# edit_user_post GET    /profile/:user_username/posts/:id/edit(.:format) posts#edit
+#      user_post GET    /profile/:user_username/posts/:id(.:format)      posts#show
+#                PATCH  /profile/:user_username/posts/:id(.:format)      posts#update
+#                PUT    /profile/:user_username/posts/:id(.:format)      posts#update
+#                DELETE /profile/:user_username/posts/:id(.:format)      posts#destroy
+#          users GET    /profile(.:format)                               users#index
+#                POST   /profile(.:format)                               users#create
+#      edit_user GET    /profile/:username/edit(.:format)                users#edit
+#           user PATCH  /profile/:username(.:format)                     users#update
+#                PUT    /profile/:username(.:format)                     users#update
+#                DELETE /profile/:username(.:format)                     users#destroy
+#          login GET    /login(.:format)                                 sessions#new
+#         logout GET    /logout(.:format)                                sessions#destroy
+#       sessions POST   /sessions(.:format)                              sessions#create
+#           root GET    /                                                home#index
 
 
 

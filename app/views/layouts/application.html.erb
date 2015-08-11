@@ -27,14 +27,14 @@
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <li>
-          <% if current_user == true %> 
+          <% if @user %> 
           <a href="/profile">Profile</a> 
           <% else %>  
           <a href="/signup">Sign Up</a> 
           <% end %> 
         </li>
         <li>
-          <% if current_user == true %>
+          <% if @user %>
           <a href="/logout">Log Out</a>
           <% else %>   
           <a href="/login">Log In</a>

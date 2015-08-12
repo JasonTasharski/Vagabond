@@ -25,4 +25,35 @@
 
 </div>
 <div id="map"></div>
+<script>
+var json =
+{
+type: "FeatureCollection",
+features: [
+{
+type: "Feature",
+properties: {
+id: "marker-id9dfzme2",
+title: <%= @city.city_name %> ,
+description: "",
+marker-size: "medium",
+marker-color: "#7ec9b1",
+marker-symbol: "suitcase"
+},
+geometry: {
+coordinates: [
+<%= @city.longitude %> ,
+<%= @city.latitude %>
+],
+type: "Point"
+},
+id: "1b16048ebd7be94a5e78752dee577857"
+}
+],
+id: "asantos3026.n5ek8ipe"
+};
+
+ L.mapbox.featureLayer(json).addTo(map);	 
+</script>
+
 

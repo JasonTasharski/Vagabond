@@ -23,8 +23,14 @@
     src: url(/fonts/DEFTONE.ttf);
 }
 
+@font-face {
+    font-family: body;
+    src: url(/fonts/Arsenal-Regular.otf);
+}
+
 body {
 	background-color: #edeecb; 
+  font-family: body;
 }
 
 .navbar-brand.logo {

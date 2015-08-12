@@ -1,26 +1,11 @@
 <div class="col-md-2"></div>
 	<div class="col-md-8 map-container">
 		<div id="map">
-			<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/asantos3026.n57ja4c0/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg'></iframe>
+			<img src="<%= @city.city_photo %>"></img>
 		</div>
-		<script>
-			L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
-			var map = L.mapbox.map('map', 'mapbox.streets', {
-			  zoomControl: false
-			}).setView([37.779262, -122.435417], 13);
-
-			// Disable drag and zoom handlers.
-			map.dragging.disable();
-			map.touchZoom.disable();
-			map.doubleClickZoom.disable();
-			map.scrollWheelZoom.disable();
-
-			// Disable tap handler, if present.
-			if (map.tap) map.tap.disable();
-		</script>
 	</div>
 	<div class="col-md-12 text-center">
-		<h1>San Francisco</h1>
+		<h1><%= @city.city_name %></h1>
 		<%= paginate @posts %>
 			<% if current_user %>
 				<a href="/profile/<%= current_user.username %>/posts/new">Write a post</a>

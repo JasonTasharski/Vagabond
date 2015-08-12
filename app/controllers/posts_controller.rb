@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+	before_filter :authorize, only: [:delete, :update]
+
 	def index #DONT REALLY NEED... yet
 		@user = current_user
 		@posts = current_user.posts.all
@@ -36,8 +38,13 @@ class PostsController < ApplicationController
 	def update
 		@user = current_user
 		@post = Post.find(params[:id])
-		@post.update_attributes(post_params)
-		redirect_to profile_path
+
+		if current_user.id == @post.user_id
+			@post.update_attributes(post_params)
+			redirect_to profile_path
+		else
+			redirect_to root_path
+		end
 	end
 
 	def destroy

@@ -7,6 +7,7 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
   <!-- mapbox js -->
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
   
@@ -15,62 +16,55 @@
 
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 
 </head>
 <body>
-<nav class="navbar navbar-inverse" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand logo">V</a>
-    </div>
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <li>
-          <% if current_user %> 
-          <a href="/profile">Profile</a> 
-          <% else %>  
-          <a href="/signup">Become a writer</a>
-          <% end %> 
-        </li>
-        <li>
-          <% if current_user %>
-          <a href="/logout">Log Out</a>
-        <li>
-          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Cities <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="/cities/sf">San Francisco</a></li>
-            <li><a href="#">London</a></li>
-            <li><a href="#">Gibraltar</a></li>
-            <li role="separator" class="divider">
-          </ul>
-        </li>
-          <li>
-            <a href="/profile/<%= current_user.username %>/posts/new">Write a post</a>
-          </li>
-          <% else %>   
-          <a href="/login">Log In</a>
-          <% end %>
-        </li>
-      </ul>
-      <!-- Drop Down For Cities -->
-    </nav>
-  </div>
-</nav>
+  <nav class="navbar navbar-inverse" role="banner">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand logo">V</a>
+      </div>
+      <nav class="collapse navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+            <% if current_user %> 
+            <li><a href="/profile">Profile</a></li>
+            <% else %>  
+            <li><a href="/signup">Become a writer</a></li>
+            <% end %> 
+            <% if current_user %>
+            <li><a href="/logout">Log Out</a></li>
+            <li>
+              <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cities <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/cities/sf">San Francisco</a></li>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Gibraltar</a></li>
+              </ul>
+            </li>
+            <li><a href="/profile/<%= current_user.username %>/posts/new">Write a post</a></li>
+           <% else %>   
+           <li><a href="/login">Log In</a></li>
+           <% end %>
+       </ul>
+       <!-- Drop Down For Cities -->
+     </nav>
+   </div>
+ </nav>
 
-	<%= yield %>
+ <%= yield %>
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <!-- Latest compiled and minified JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

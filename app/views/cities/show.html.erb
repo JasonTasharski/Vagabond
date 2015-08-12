@@ -1,21 +1,20 @@
-<div class="col-md-2"></div>
-	<div class="col-md-8 map-container">
-		<div id="map">
-			<img src="<%= @city.city_photo %>"></img>
-		</div>
-	</div>
-	<div class="col-md-12 text-center">
-		<h1><%= @city.city_name %></h1>
-		<%= paginate @posts %>
-			<% if current_user %>
-				<a href="/profile/<%= current_user.username %>/posts/new">Write a post</a>
-				<% else %>
-				<a href="/login">Log in to write a post</a>
-				<% end %>
-				<% @posts.each do |p| %>
-				<p><%= link_to p.title, user_post_path(p.user, p) %></p>
-			<% end %>
 
+<div class="col-md-12 map-container">
+	<div id="city-img">
+		<img src="<%= @city.city_photo %>"></img>
 	</div>
-<div class="col-md-2"></div>
+</div>
+<div class="col-md-12 text-center">
+	<h1><%= @city.city_name %></h1>
+	<%= paginate @posts %>
+	<% if current_user %>
+	<a href="/profile/<%= current_user.username %>/posts/new">Write a post</a>
+	<% else %>
+	<a href="/login">Log in to write a post</a>
+	<% end %>
+	<% @posts.each do |p| %>
+	<p><%= link_to p.title, user_post_path(p.user, p) %></p>
+	<% end %>
+</div>
+
 

@@ -7,6 +7,7 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
   
   <!-- mapbox link -->
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet'/>
@@ -38,13 +39,13 @@
             <% if current_user %>
             <li><a href="/logout">Log Out</a></li>
             <li>
-              <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Cities <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <li><a href="/cities/sf">San Francisco</a></li>
-                <li><a href="#">London</a></li>
-                <li><a href="#">Gibraltar</a></li>
+                <li><a href="/cities/lon">London</a></li>
+                <li><a href="/cities/gib">Gibraltar</a></li>
               </ul>
             </li>
             <li><a href="/profile/<%= current_user.username %>/posts/new">Write a post</a></li>

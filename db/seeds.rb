@@ -22,7 +22,7 @@
       post_params = Hash.new
       post_params[:title] = FFaker::HipsterIpsum.sentence(1)
       post_params[:body] = FFaker::HipsterIpsum.sentence(5)
-      post_params[:city_id] = 1
+      post_params[:city_id] = rand(1..3)
       @post = user.posts.create(post_params)
     end
   end
@@ -31,6 +31,23 @@
 san_francisco = Hash.new
 san_francisco[:city_name] = "San Francisco"
 san_francisco[:short_name] = "sf"
-san_francisco[:city_photo] = "http://www.sanfrancisco.travel/sites/sftraveldev.prod.acquia-sites.com/files/SanFrancisco_0.jpg"
+san_francisco[:city_photo] = "/cities/sanfrancisco.jpg"
+san_francisco[:latitude] = "37.783"
+san_francisco[:longitude] = "-122.416"
 @city = City.create(san_francisco)
 
+london = Hash.new
+london[:city_name] = "London"
+london[:short_name] = "lon"
+london[:city_photo] = "/cities/london.jpg"
+london[:latitude] = "51.507"
+london[:longitude] = "0.127"
+@city = City.create(london)
+
+gibraltar = Hash.new
+gibraltar[:city_name] = "Gibraltar"
+gibraltar[:short_name] = "gib"
+gibraltar[:city_photo] = "/cities/gibraltar.jpg"
+gibraltar[:latitude] = "36.143"
+gibraltar[:longitude] = "5.353"
+@city = City.create(gibraltar)

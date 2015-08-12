@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   		  session[:user_id] = @user.id
   		  redirect_to profile_path
   	  else
-  		  redirect_to root_path
+  		  redirect_to signup_path
   	  end
     end
   end
@@ -47,6 +47,6 @@ class UsersController < ApplicationController
   #private methods
   private
   	def user_params
-  		params.require(:user).permit(:username, :first_name, :last_name, :password, :email, :current_city)
+  		params.require(:user).permit(:username, :first_name, :last_name, :password, :password_confirmation, :email, :current_city)
   	end
 end

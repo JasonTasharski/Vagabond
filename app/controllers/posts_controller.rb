@@ -7,8 +7,12 @@ class PostsController < ApplicationController
 
 	def create
 		user = current_user
-		post = current_user.posts.create(post_params)
-		redirect_to user_post_path(user, post)
+		post = current_user.posts.new(post_params)
+		if post.save
+			redirect_to user_post_path(user, post)
+		else
+			redirect_to new_user_post_path(user)
+		end
 	end
 
 	def new

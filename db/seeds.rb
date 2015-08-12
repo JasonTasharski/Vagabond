@@ -26,8 +26,11 @@
       @post = user.posts.create(post_params)
     end
   end
+
+
 san_francisco = Hash.new
 san_francisco[:city_name] = "San Francisco"
 san_francisco[:short_name] = "sf"
 san_francisco[:city_photo] = "http://www.sanfrancisco.travel/sites/sftraveldev.prod.acquia-sites.com/files/SanFrancisco_0.jpg"
 @city = City.create(san_francisco)
+

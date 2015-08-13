@@ -2,21 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .inner-cover {
-	margin-top: 100px;
+	margin-top: 300px;
+	margin-left: 40px;
+	position: absolute;
+	z-index: inherit;
 }
 
 #map { 
-	position: relative;
-	top:0; 
-	bottom:0; 
+	background-size: cover;
+	position: relative; 
 	width:100%; 
-	height: 60%;
-	margin: 0 auto;  
-	text-align: right;
+	height: 100%;
+	z-index: -1;
 }
 
 .map-container {
 	padding-left: 0;
 	padding-right: 0;
 	padding-top: 0;
+}
+
+p.lead {
+	font-size: 1.2em;
 }

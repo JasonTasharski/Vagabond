@@ -17,7 +17,8 @@
 		<%= p.title %>
 	</h3>
 	<%= p.body %><br>
-	<%= p.user_id %><br>
+	<%= User.find(p.user_id).username %><br>
+	<%= City.find(p.city_id).city_name %><br>
 
 </div>
 <% end %>

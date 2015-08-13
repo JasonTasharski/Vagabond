@@ -29,6 +29,7 @@
 
 
 san_francisco = Hash.new
+san_francisco[:city_description] = "San Francisco, officially the City and County of San Francisco, is the cultural, commercial, and financial center of Northern California and the only consolidated city-county in California. San Francisco encompasses a land area of about 46.9 square miles (121 km2) on the northern end of the San Francisco Peninsula, which makes it the smallest county in the state."
 san_francisco[:city_name] = "San Francisco"
 san_francisco[:short_name] = "sf"
 san_francisco[:city_photo] = "/cities/sanfrancisco.jpg"
@@ -38,6 +39,7 @@ san_francisco[:longitude] = "-122.416"
 
 london = Hash.new
 london[:city_name] = "London"
+london[:city_description] = "London is the capital and most populous city of England and the United Kingdom. Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium. London's ancient core, the City of London, largely retains its 1.12-square-mile (2.9 km2) medieval boundaries and in 2011 had a resident population of 7,375, making it the smallest city in England."
 london[:short_name] = "lon"
 london[:city_photo] = "/cities/london.jpg"
 london[:latitude] = "51.507"
@@ -46,8 +48,9 @@ london[:longitude] = "0.127"
 
 gibraltar = Hash.new
 gibraltar[:city_name] = "Gibraltar"
+gibraltar[:city_description] = "Gibraltar is a British Overseas Territory located on the southern end of the Iberian Peninsula at the entrance of the Mediterranean. It has an area of 6.0 km2 (2.3 sq mi) and shares its northern border with the Province of Cádiz in Andalusia, Spain. The Rock of Gibraltar is the major landmark of the region. At its foot is a densely populated city area, home to almost 30,000 Gibraltarians and other nationalities."
 gibraltar[:short_name] = "gib"
 gibraltar[:city_photo] = "/cities/gibraltar.jpg"
 gibraltar[:latitude] = "36.143"
-gibraltar[:longitude] = "5.353"
+gibraltar[:longitude] = "-5.353"
 @city = City.create(gibraltar)

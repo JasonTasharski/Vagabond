@@ -1,3 +1,4 @@
+
 <div class="site-wrapper text-center">
 
 	<div class="site-wrapper-inner">
@@ -9,19 +10,67 @@
 				<p class="lead">
 					<a href="/cities/sf" class="btn btn-lg btn-default">Explore</a>
 				</p>
-				<div id="map">
-					<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/asantos3026.n5a3ea59/attribution,zoompan,geocoder,share.html?access_token=pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg'></iframe>
+				
+
+			</div>
+			<div class="mastfoot">
+				<div class="inner">
+					<p>Created by <a href="https://github.com/JasonTasharski/Vagabond">Team EJAH</a></p>
 				</div>
 			</div>
-	<div class="mastfoot">
-		<div class="inner">
-			<p>Created by <a href="https://github.com/JasonTasharski/Vagabond">Team EJAH</a></p>
+
 		</div>
+
 	</div>
 
 </div>
+<div id="map"></div>
 
-</div>
+<!-- mapbox js -->
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+<script type="text/javascript">
+  L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
+  var map = L.mapbox.map('map', 'mapbox.high-contrast', {zoomControl: false}).setView([30.449, -88.242], 2);
+      
+      // Disable drag and zoom handlers.
+      map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.scrollWheelZoom.disable();
 
-</div>
+// Disable tap handler, if present.
+if (map.tap) map.tap.disable();
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+var geocoder = L.mapbox.geocoder('mapbox.places');
+
+
+var geojson = {
+  type: "FeatureCollection",
+  features: [
+  <% @cities.each do |c| %>
+  {
+    type: "Feature",
+      properties: {
+      title: "<%= c.city_name %>",
+      "marker-size": "medium",
+      "marker-color": "#7ec9b1",
+      "marker-symbol": "suitcase",
+      url: "/cities/<%= c.short_name %>"
+    },
+    geometry: {
+      type: "Point",
+      coordinates: [<%=c.longitude %>, <%=c.latitude%>]
+    }
+  },<% end %>
+  ]
+};
+
+myLayer.setGeoJSON(geojson);
+myLayer.on('click', function(e) {
+    window.open(e.layer.feature.properties.url);
+});	
+</script>
+
 

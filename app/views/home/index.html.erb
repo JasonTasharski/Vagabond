@@ -46,26 +46,25 @@ var myLayer = L.mapbox.featureLayer().addTo(map);
 var geocoder = L.mapbox.geocoder('mapbox.places');
 
 
-var cities = <%= @cities %>
-
-console.log(cities)
-
 var geojson = {
   type: "FeatureCollection",
-  features: [{
+  features: [
+  <% @cities.each do |c| %>
+  {
     type: "Feature",
       properties: {
-      title: "San Francisco",
+      title: "<%= c.city_name %>",
       "marker-size": "medium",
       "marker-color": "#7ec9b1",
       "marker-symbol": "suitcase",
-      url: "cities/sf"
+      url: "/cities/<%= c.short_name %>"
     },
     geometry: {
       type: "Point",
-      coordinates: [-60, 28]
+      coordinates: [<%=c.longitude %>, <%=c.latitude%>]
     }
-  }]
+  },<% end %>
+  ]
 };
 
 myLayer.setGeoJSON(geojson);

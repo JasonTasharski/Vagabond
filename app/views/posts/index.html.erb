@@ -5,7 +5,6 @@
 			<%= p.title %><br>
 			<%= p.body %><br>
 			<%= p.user_id %><br>
-			<hr>
 			<%= link_to "Show post", user_post_path(@user, p) %><br>
 			<% if current_user && current_user.posts.include?(@post) %>
 				<%= link_to "", edit_user_post_path(@user, p), class: "glyphicon glyphicon-pencil edit-post" %><br>

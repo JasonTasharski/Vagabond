@@ -4,11 +4,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 profile">
-        <div class="col-md-9">
-          <h3><%= current_user.username %><%= "'s " %>Posts</h3>
+        <h3><%= current_user.username %><%= "'s " %>Posts</h3>
+        <div class="col-md-8">
           <%= render 'users/showposts' %>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-3 profile-section">
           <h1><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
             <p class="profile-body"><%= current_user.current_city %></p>
             <p class="profile-body">Joined Since: 

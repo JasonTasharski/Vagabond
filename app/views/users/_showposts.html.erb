@@ -1,10 +1,15 @@
 <% @posts.each do |p| %>
-	<%= p.title %><br>
+<%= link_to "", user_post_path(@user, p), method: :delete, class: "glyphicon glyphicon-remove delete-post" %>
+<div class="post-border">
+	<h3 class="title-border">
+		<%= p.title %>
+	</h3>
 	<%= p.body %><br>
 	<%= p.user_id %><br>
-	<%= link_to "Show post", user_post_path(@user, p) %><br>
-	<%= link_to "", edit_user_post_path(@user, p), class: "glyphicon glyphicon-pencil edit-post" %><br>
-	<%= link_to "", user_post_path(@user, p), method: :delete, class: "glyphicon glyphicon-remove delete-post" %><br>
-	<%= link_to "Profile", profile_path(@user) %>
-	<hr>
+	<div class="post-controls">
+		<%= link_to "Show post", user_post_path(@user, p) %>
+		<%= link_to "", edit_user_post_path(@user, p), class: "glyphicon glyphicon-pencil edit-post" %>
+		<%= link_to "Profile", profile_path(@user) %>
+	</div>
+</div>
 <% end %>

@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
 	:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] },
 	:size => { :in => 0..10000.kilobytes }
 
-	def to_param
-	"#{username}"
-	end
+	extend FriendlyId
+	friendly_id :username, use: [:slugged, :finders]
+
 end
 

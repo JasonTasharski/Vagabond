@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'friendly_id'
 gem 'aws-sdk', '~> 1.6'
 gem 'paperclip', "~> 4.3"
 gem 'mapbox-rails'

@@ -19,8 +19,8 @@ class User < ActiveRecord::Base
 		{ :bucket => ENV['S3_BUCKET'], :access_key_id => ENV['S3_PUBLIC_KEY'], :secret_access_key => ENV['S3_SECRET'] }
 	end
 
-	def to_param
-	"#{username}"
-	end
+	extend FriendlyId
+	friendly_id :username, use: [:slugged, :finders]
+
 end
 

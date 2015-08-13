@@ -11,4 +11,7 @@ class Post < ActiveRecord::Base
   # validates_attachment :photo, :presence => true,
   #                     :content_type => { :content_type => ["image/jpeg", "image/png"] },
   #                     :size => { :in => 0..4200.kilobytes }
+
+  extend FriendlyId
+    friendly_id :title, use: [:slugged, :finders]
 end

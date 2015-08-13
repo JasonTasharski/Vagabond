@@ -36,26 +36,24 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <% if current_user %> 
-            <li><a href="/profile">Profile</a></li>
-            <% else %>  
-            <li><a href="/signup">Become a writer</a></li>
-            <% end %> 
-            <% if current_user %>
-            <li><a href="/logout">Log Out</a></li>
-            <li>
-              <a role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Cities <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="/cities/sf">San Francisco</a></li>
-                <li><a href="/cities/lon">London</a></li>
-                <li><a href="/cities/gib">Gibraltar</a></li>
-              </ul>
-            </li>
-            <li><a href="/profile/<%= current_user.username %>/posts/new">Write a post</a></li>
-           <% else %>   
-           <li><a href="/login">Log In</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/logout">Log Out</a></li>
+          <li><a href="/profile/<%= current_user.username %>/posts/new">Write a post</a></li>
+        <% else %>  
+          <li><a href="/signup">Become a writer</a></li>
+          <li><a href="/login">Log In</a></li>
         <% end %>
+        <li>
+          <a role="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cities <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/cities/sf">San Francisco</a></li>
+            <li><a href="/cities/lon">London</a></li>
+            <li><a href="/cities/gib">Gibraltar</a></li>
+          </ul>
+        </li>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

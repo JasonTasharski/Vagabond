@@ -49,5 +49,5 @@ gibraltar[:city_name] = "Gibraltar"
 gibraltar[:short_name] = "gib"
 gibraltar[:city_photo] = "/cities/gibraltar.jpg"
 gibraltar[:latitude] = "36.143"
-gibraltar[:longitude] = "5.353"
+gibraltar[:longitude] = "-5.353"
 @city = City.create(gibraltar)

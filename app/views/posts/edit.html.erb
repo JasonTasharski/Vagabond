@@ -1,9 +1,14 @@
-<div class="col-md-6 offset-3">
-	<div class="form-group">
-		<%= form_for :post, url: user_post_path, method: :put do |f| %>
-		  <%= f.text_field :title, placeholder: @post.title, class: "form-control" %><br>
-		  <%= f.text_field :body, placeholder: @post.body, class: "form-control" %><br>
-		  <%= f.submit "Edit Post" %>
-		<% end %>
+<div class="col-md-12">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 post post-border">
+		<h3>Edit your post</h3>
+		<div class="form-group">
+			<%= form_for :post, url: user_post_path, method: :put do |f| %>
+			<%= f.text_field :title, placeholder: @post.title, class: "form-control" %><br>
+			<%= f.text_field :body, placeholder: @post.body, class: "form-control" %><br>
+			<%= f.submit "Edit Post" %>
+			<% end %>
+		</div>
 	</div>
+	<div class="col-md-4"></div>
 </div>

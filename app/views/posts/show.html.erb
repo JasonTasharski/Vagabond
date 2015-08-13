@@ -7,7 +7,9 @@
 			<%= User.find(@post.user_id).username %><br>
 			<%= City.find(@post.city_id).city_name %><br>
 			<hr class="style-one">
-			<%= link_to "All my posts", profile_path%>
+			<% if current_user %>
+				<%= link_to "All my posts", profile_path%>
+			<% end %>
 		</div>
 	</div>
 	<div class="col-md-4"></div>

@@ -14,11 +14,10 @@
 	</div>
 	<%= image_tag @user.avatar.url(:medium) %>
 	<h3 class="title-border">
-		<%= p.title %>
+		<%= p.title %><span class="author-post"> by <%= User.find(p.user_id).username %></span><br>
 	</h3>
-	<%= p.body %><br>
-	<%= User.find(p.user_id).username %><br>
+	<hr class="style-one">
 	<%= City.find(p.city_id).city_name %><br>
-
+	<%= p.body %><br>
 </div>
 <% end %>

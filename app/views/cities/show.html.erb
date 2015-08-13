@@ -13,7 +13,10 @@
 	<a href="/login">Log in to write a post</a>
 	<% end %>
 	<% @posts.each do |p| %>
-	<p>		
+	<p>	
+		<% if current_user.id == p.user_id %>
+		<%= link_to "", user_post_path(p.user, p), method: :delete, data: {confirm: "Are you sure?"}, class: "glyphicon glyphicon-remove delete-post" %>	
+		<% end %>
 		<%= link_to p.title, user_post_path(p.user, p) %>
 	</p>
 	<% end %>

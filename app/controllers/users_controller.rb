@@ -41,6 +41,8 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @posts = @user.posts
+    session[:return_to] = profile_path
+    
   	render :show
   end
 

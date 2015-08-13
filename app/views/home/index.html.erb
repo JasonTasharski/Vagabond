@@ -68,7 +68,7 @@ var geojson = {
 
 myLayer.setGeoJSON(geojson);
 myLayer.on('click', function(e) {
-    window.open(e.layer.feature.properties.url);
+    window.location.replace(e.layer.feature.properties.url);
 });	
 </script>
 

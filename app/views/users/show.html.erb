@@ -14,11 +14,11 @@
             <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#">Update Profile<%= link_to "", edit_user_path(@user) %></a></li>
+              <li><%= link_to "Update Profile", edit_user_path(@user) %></li>
             </ul>
           </div>
           <div class="profile-img img-responsive center-block" alt="Responsive image">
-            <img src="/profile-placeholder.jpg" alt="..." class="img-circle">
+            <%= image_tag @user.avatar.url(:medium), class: "img-circle" %>
           </div>
             <h1><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
               <hr class="style-one">

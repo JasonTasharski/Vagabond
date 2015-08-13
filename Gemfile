@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'aws-sdk', '~> 1.6'
 gem 'paperclip', "~> 4.3"
 gem 'mapbox-rails'
 gem 'kaminari'
@@ -48,5 +49,8 @@ group :development, :test do
 
   # ?
   gem 'ffaker'
+
+  # Amazon S3
+  gem 'dotenv-rails'
 end
 

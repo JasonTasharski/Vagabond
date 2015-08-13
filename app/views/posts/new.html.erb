@@ -3,7 +3,7 @@
 	<div class="col-md-4 post post-border">
 		<div class="form-group">
 			<h3>Create a post</h3>
-			<%= form_for :post, url: user_posts_path do |f| %>
+			# <%= form_for :post, url: user_posts_path do |f| %>
 			<%= f.text_field :title, placeholder: "Title", class: "form-control" %><br>
 			<%= f.text_field :body, placeholder: "body", class: "form-control" %><br>
 			<%= f.collection_select :city_id, City.all, :id, :city_name, :class => "btn btn-default dropdown-toggle post-btn" %><br>

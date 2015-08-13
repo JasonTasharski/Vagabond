@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'paperclip', "~> 4.3"
 gem 'mapbox-rails'
 gem 'kaminari'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

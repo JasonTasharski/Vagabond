@@ -1,3 +1,24 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post {
+	margin-top: 100px;
+}
+#post_city_id {
+	margin-bottom: 20px;
+}
+
+.title-border {
+	border-bottom: 1px solid #b4b4b4;
+}
+
+.post-border {
+	border: 1px solid #b4b4b4;
+	margin-bottom: 20px;
+	padding-left: 20px;
+}
+
+.post-controls {
+	display: inline;
+}

@@ -10,8 +10,9 @@ class PostsController < ApplicationController
 	def create
 		user = current_user
 		post = current_user.posts.new(post_params)
+
 		if post.save
-			redirect_to user_post_path(user, post)
+			redirect_to city_path(post.city.short_name)
 		else
 			redirect_to new_user_post_path(user)
 		end
@@ -50,7 +51,7 @@ class PostsController < ApplicationController
 	def destroy
 		@user = current_user
 		Post.find(params[:id]).destroy
-		redirect_to profile_path
+		redirect_to session.delete(:return_to)
 	end
 
 	private

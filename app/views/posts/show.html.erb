@@ -1,9 +1,13 @@
-<div class="col-md-6 offset-3">
-	<div class="form-group">
-		<%= @post.title %><br>
-		<%= @post.body %><br>
-		<%= @post.user_id %><br>
-		<hr>
-		<%= link_to "All my posts", profile_path%>
+<div class="col-md-12">
+	<div class="col-md-4"></div>
+	<div class="col-md-4 post">
+		<div class="form-group">
+			<h3><%= @post.title %></h3><br>
+			<%= @post.body %><br>
+			<%= @post.user_id %><br>
+			<hr>
+			<%= link_to "All my posts", profile_path%>
+		</div>
 	</div>
+	<div class="col-md-4"></div>
 </div>

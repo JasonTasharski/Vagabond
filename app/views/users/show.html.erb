@@ -3,18 +3,20 @@
 <div id="masthead">  
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-3">
-          <h1><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
-            <p class="lead"><%= current_user.username %></p>
-            <p class="lead"><%= current_user.current_city %></p>
-            <p class="lead">Joined Since: <%= current_user.created_at.strftime("%b. %Y") %></p>
-            <p><%= link_to "Edit", edit_user_path(@user) %></p>
-          </h1>
-        </div>
-        <div class="col-md-9">
-          <h3><%= current_user.username %><%= " " %>Posts</h3>
+      <div class="col-md-12 profile">
+        <h3><%= current_user.username %><%= "'s " %>Posts</h3>
+        <div class="col-md-8">
           <%= render 'users/showposts' %>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3 profile-section">
+          <h1><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
+            <p class="profile-body"><%= current_user.current_city %></p>
+            <p class="profile-body">Joined Since: 
+              <%= current_user.created_at.strftime("%b. %Y") %>
+              <%= link_to "", edit_user_path(@user), class: "glyphicon glyphicon-pencil profile-body" %>
+            </p>
+          </h1>
         </div>
       </div>  
     </div> 

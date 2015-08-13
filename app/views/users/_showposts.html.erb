@@ -12,7 +12,7 @@
 			<li><a href="#"><%= link_to "Delete Post", user_post_path(@user, p), method: :delete, data: {confirm: "Are you sure?"} %></a></li>
 		</ul>
 	</div>
-
+	<%= image_tag @user.avatar.url(:medium) %>
 	<h3 class="title-border">
 		<%= p.title %>
 	</h3>

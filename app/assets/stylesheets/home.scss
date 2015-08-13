@@ -1,11 +1,15 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.inner-cover {
-	margin-top: 300px;
-	margin-left: 40px;
+.cover {
+	width:100%; 
+	height: 100%;
 	position: absolute;
 	z-index: 1;
+}
+
+.bottom {
+	margin-top: 600px;
 }
 
 #map { 
@@ -21,10 +25,7 @@
 	padding-top: 0;
 }
 
-p.lead {
-	font-size: 1.2em;
-}
-
-h1 {
-	padding-right: 40px;
+h1.lead {
+	font-size: 2em;
+	margin-bottom: 20px;
 }

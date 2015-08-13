@@ -2,3 +2,21 @@
 .city-img {
 	width: 100%;
 }
+
+.title {
+font-size: 1.5em;
+}
+
+.logo {
+	font-family: logo;
+	font-size: 5em;
+	margin-top: 0;
+	color: #ff0000;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}

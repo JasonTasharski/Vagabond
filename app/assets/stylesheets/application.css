@@ -16,7 +16,7 @@
  */
 
 /*Colors:
-#edeecb <= Pale yellow background color
+#c7fceb <= Pale blue background color
 #ff0000 <= Logo Red*/
 body, html {
 	width: 100%;
@@ -33,7 +33,7 @@ body, html {
 }
 
 body {
-	background-color: #fbff8f; 
+	background-color: #c7fceb; 
 	font-family: body;
 }
 

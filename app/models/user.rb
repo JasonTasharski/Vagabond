@@ -7,15 +7,20 @@ class User < ActiveRecord::Base
 	validates :password, confirmation: true
 	# validates :password_confirmation, presence: true
 
-  has_attached_file :avatar,
-                   :styles => { :medium => "150x150>", :thumb => "44x44#>" },
-                   :default_url => "/images/:style/missing.png"
+	has_attached_file :avatar,
+	:styles => { :medium => "150x150>", :thumb => "44x44#>" },
+	:default_url => "/images/:style/missing.png"
 
-	validates_attachment :avatar, 
-                    	:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] },
-                    	:size => { :in => 0..10.kilobytes }
-end
+	validates_attachment :avatar,
+	:content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] },
+	:size => { :in => 0..10000.kilobytes }
+
+	def s3_credentials
+		{ :bucket => ENV['S3_BUCKET'], :access_key_id => ENV['S3_PUBLIC_KEY'], :secret_access_key => ENV['S3_SECRET'] }
+	end
 
 	def to_param
-	  "#{username}"
+	"#{username}"
 	end
+end
+

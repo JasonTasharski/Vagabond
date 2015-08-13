@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
+<<<<<<< HEAD
 gem 'friendly_id'
 gem 'aws-sdk', '~> 1.6'
+=======
+
+>>>>>>> 4036d09a750946e651c737f1e0da8f2f9056bb16
 gem 'paperclip', "~> 4.3"
 gem 'mapbox-rails'
 gem 'kaminari'
@@ -51,7 +55,5 @@ group :development, :test do
   # ?
   gem 'ffaker'
 
-  # Amazon S3
-  gem 'dotenv-rails'
 end
 

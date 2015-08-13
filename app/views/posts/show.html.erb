@@ -7,7 +7,7 @@
 			<%= User.find(@post.user_id).username %><br>
 			<%= City.find(@post.city_id).city_name %><br>
 			<hr class="style-one">
-			<% if current_user %>
+			<% if current_user && (current_user.id == @post.user_id) %>
 				<%= link_to "All my posts", profile_path%>
 			<% end %>
 		</div>

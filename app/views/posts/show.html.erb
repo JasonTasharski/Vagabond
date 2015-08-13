@@ -9,6 +9,8 @@
 			<hr class="style-one">
 			<% if current_user && (current_user.id == @post.user_id) %>
 				<%= link_to "All my posts", profile_path%>
+			<% else %>
+				<%= link_to "Go back", :back %>
 			<% end %>
 		</div>
 	</div>

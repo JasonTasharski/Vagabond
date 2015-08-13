@@ -1,12 +1,6 @@
 class PostsController < ApplicationController
 	before_filter :authorize, only: [:delete, :update]
 
-	def index #DONT REALLY NEED... yet
-		@user = current_user
-		@posts = current_user.posts.all
-		render :index
-	end
-
 	def create
 		user = current_user
 		post = current_user.posts.new(post_params)

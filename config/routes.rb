@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   get "/profile", to: "users#show"
   resources :users, except: [:new, :show], path: "/profile", param: :username do 
-    resources :posts
+    resources :posts, exept: [:index]
   end
 
   #session routes

@@ -37,6 +37,10 @@ body {
 	font-family: body;
 }
 
+.post {
+	margin-top: 100px;
+}
+
 .navbar-brand.logo {
 	font-family: logo;
 	font-size: 3em;

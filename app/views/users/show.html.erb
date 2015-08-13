@@ -9,22 +9,24 @@
           <%= render 'users/showposts' %>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-3 profile-section">
-
-          <div class="dropdown pull-right">
+        <div class="col-md-3 profile-section text-center">
+          <div class="dropdown pull-left">
             <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#"><%= link_to "", edit_user_path(@user) %></a></li>
+              <li><a href="#">Update Profile<%= link_to "", edit_user_path(@user) %></a></li>
             </ul>
           </div>
-
-          <h1><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
-            <p class="profile-body"><%= current_user.current_city %></p>
-            <p class="profile-body">Joined Since: 
-              <%= current_user.created_at.strftime("%b. %Y") %>
-            </p>
-          </h1>
+          <div class="profile-img img-responsive center-block" alt="Responsive image">
+            <img src="/profile-placeholder.jpg" alt="..." class="img-circle">
+          </div>
+            <h1><%= current_user.first_name %><%= " " %> <%= current_user.last_name %><span>
+              <hr class="style-one">
+              <p class="profile-body"><%= current_user.current_city %></p>
+              <p class="profile-body">Joined Since: 
+                <%= current_user.created_at.strftime("%b. %Y") %>
+              </p>
+            </h1>
         </div>
       </div>  
     </div> 

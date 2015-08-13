@@ -25,35 +25,53 @@
 
 </div>
 <div id="map"></div>
-<script>
-var json =
-{
-type: "FeatureCollection",
-features: [
-{
-type: "Feature",
-properties: {
-id: "marker-id9dfzme2",
-title: <%= @city.city_name %> ,
-description: "",
-marker-size: "medium",
-marker-color: "#7ec9b1",
-marker-symbol: "suitcase"
-},
-geometry: {
-coordinates: [
-<%= @city.longitude %> ,
-<%= @city.latitude %>
-],
-type: "Point"
-},
-id: "1b16048ebd7be94a5e78752dee577857"
-}
-],
-id: "asantos3026.n5ek8ipe"
+
+<!-- mapbox js -->
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+<script type="text/javascript">
+  L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
+  var map = L.mapbox.map('map', 'mapbox.high-contrast', {zoomControl: false}).setView([30.449, -88.242], 2);
+      
+      // Disable drag and zoom handlers.
+      map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.scrollWheelZoom.disable();
+
+// Disable tap handler, if present.
+if (map.tap) map.tap.disable();
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+var geocoder = L.mapbox.geocoder('mapbox.places');
+
+
+var cities = <%= @cities %>
+
+console.log(cities)
+
+var geojson = {
+  type: "FeatureCollection",
+  features: [{
+    type: "Feature",
+      properties: {
+      title: "San Francisco",
+      "marker-size": "medium",
+      "marker-color": "#7ec9b1",
+      "marker-symbol": "suitcase",
+      url: "cities/sf"
+    },
+    geometry: {
+      type: "Point",
+      coordinates: [-60, 28]
+    }
+  }]
 };
 
- L.mapbox.featureLayer(json).addTo(map);	 
+myLayer.setGeoJSON(geojson);
+myLayer.on('click', function(e) {
+    window.open(e.layer.feature.properties.url);
+});	
 </script>
 
 

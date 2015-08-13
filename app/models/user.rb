@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	# validates :password_confirmation, presence: true
 
 	has_attached_file :avatar,
-	:styles => { :medium => "150x150>", :thumb => "44x44#>" },
+	:styles => { :medium => "150x150>" },
 	:default_url => "/images/:style/missing.png"
 
 	validates_attachment :avatar,

@@ -1,8 +1,8 @@
-<div class="col-md-12 map-container">
+<div class="col-md-12 map-container animated slideInDown">
 	<img class="city-img" src="<%= @city.city_photo %>"></img>
 </div>
 <div class="col-md-12 post">
-	<div class="col-md-3 post-border">
+	<div class="col-md-3 post-border animated slideInLeft">
 		<h1 class="logo"><%= @city.city_name %></h1>
 		<hr class="style-one">
 		<p><%= @city.city_description %> </p>
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	<div class="col-md-1"></div>
-	<div class="col-md-7 post-border">
+	<div class="col-md-7 post-border animated slideInUp">
 		<h1>Recent Posts</h1>
 		<span><%= paginate @posts %></span>
 		<hr class="style-one">

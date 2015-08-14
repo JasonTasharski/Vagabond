@@ -1,35 +1,22 @@
-
-<div class="site-wrapper text-center">
-
-	<div class="site-wrapper-inner">
-
-		<div class="cover-container">
-			<!-- <div class="mastfoot"> -->
-				<div class="inner">
-					<p>Created by <a href="https://github.com/JasonTasharski/Vagabond">Team EJAH</a></p>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
+  
+<div class="cover cover-heading text-center">
+  <span>Vagabond</span>
 </div>
-  <div class="inner-cover">
-    <h1 class="cover-heading">Vagabond</h1>
-    <p class="lead">Discover your favorite spots within the best cities.</p>
-    <p class="lead">
-      <a href="/cities/sf" class="btn btn-md btn-default">Explore</a>
-    </p>
-  </div>
+<div class="bottom cover text-center">
+  <h1 class="lead"><strong>Discover your favorite spots within the best cities.</strong></h1>
+  <p class="lead">
+    <a href="/cities/sf" class="btn btn-md btn-default">Explore</a>
+  </p>
+  <p>Created by <a href="https://github.com/JasonTasharski/Vagabond">Team EJAH</a></p>
+</div>
 <div id="map"></div>
 
 <!-- mapbox js -->
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
 <script type="text/javascript">
-  L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
-  var map = L.mapbox.map('map', 'mapbox.high-contrast', {zoomControl: false}).setView([30.449, -88.242], 2);
-      
+L.mapbox.accessToken = 'pk.eyJ1IjoiYXNhbnRvczMwMjYiLCJhIjoiZWZlMmMyM2JiN2ZiNzcxZmJkOGJhMWNhZWE4ODc1MjMifQ.Moj73Bv5_uyylRIcZkXcYg';
+var map = L.mapbox.map('map', 'mapbox.high-contrast', {zoomControl: false}).setView([30.449, -88.242], 2);
+
       // Disable drag and zoom handlers.
       map.dragging.disable();
       map.touchZoom.disable();
@@ -50,7 +37,7 @@ var geojson = {
   <% @cities.each do |c| %>
   {
     type: "Feature",
-      properties: {
+    properties: {
       title: "<%= c.city_name %>",
       "marker-size": "medium",
       "marker-color": "#7ec9b1",
@@ -67,7 +54,7 @@ var geojson = {
 
 myLayer.setGeoJSON(geojson);
 myLayer.on('click', function(e) {
-    window.location.replace(e.layer.feature.properties.url);
+  window.location.replace(e.layer.feature.properties.url);
 });	
 </script>
 

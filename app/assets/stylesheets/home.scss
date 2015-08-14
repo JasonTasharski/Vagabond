@@ -1,28 +1,45 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+    font-family: logo;
+    src: url(/fonts/DEFTONE.ttf);
+}
 .cover {
-	width:100%; 
-	height: 100%;
-	position: absolute;
+	position: relative;
 	z-index: 1;
+	margin-top: 50px;
+}
+.cover-heading {
+	font-family: logo;
+	font-size: 9em;
+	color: #ff0000;
+	position: absolute;
+	width: 470px;
+	margin-left:-235px;
+	left: 50%;
+
 }
 
 .bottom {
-	margin-top: 150px;
+	position: absolute;
+	width: 450px;
+	margin-left:-225px;
+	left: 50%;
+	bottom: 0;
 }
 
 #map { 
 	background-size: cover;
-	position: relative; 
+	position: absolute;
 	width:100%; 
 	height: 100%;
 }
 
 .map-container {
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
+   padding-left: 0;
+   padding-right: 0;
+   padding-top: 0;
 }
 
 h1.lead {

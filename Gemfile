@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "judge"
 gem 'friendly_id'
 gem 'aws-sdk', '~> 1.6'
 gem 'paperclip', "~> 4.3"

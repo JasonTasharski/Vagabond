@@ -1,7 +1,5 @@
 <div class="col-md-12 map-container">
-	<div id="city-img">
-		<img src="<%= @city.city_photo %>"></img>
-	</div>
+	<img class="city-img" src="<%= @city.city_photo %>"></img>
 </div>
 <div class="col-md-12 post">
 	<div class="col-md-3 post-border">
@@ -25,10 +23,11 @@
 		<div class="title">
 			<% @posts.each do |p| %>
 			<p>	
-				<% if current_user && (current_user.id == p.user_id) %>
-				<%= link_to "", user_post_path(p.user, p), method: :delete, data: {confirm: "Are you sure?"}, class: "glyphicon glyphicon-remove delete-post" %>	
-				<% end %>
 				<%= link_to p.title, user_post_path(p.user, p) %>
+				<% if current_user && (current_user.id == p.user_id) %>
+				<%= link_to "", user_post_path(p.user, p), method: :delete, data: {confirm: "Are you sure?"}, class: "glyphicon glyphicon-remove delete-post" %>
+				<%= link_to "", edit_user_post_path(p.user, p), class: "glyphicon glyphicon-pencil" %>	
+				<% end %>
 			</p>
 			<% end %>
 		</div>

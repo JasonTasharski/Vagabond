@@ -4,12 +4,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 profile">
-        <h3><%= current_user.username %><%= "'s " %>Posts</h3>
-        <div class="col-md-8">
+        <h3 class="animated slideInLeft"><%= current_user.username %><%= "'s " %>Posts</h3>
+        <div class="col-md-8 animated slideInUp">
           <%= render 'users/showposts' %>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-3 profile-section text-center">
+        <div class="col-md-3 profile-section text-center animated slideInRight">
           <div class="dropdown pull-left">
             <button class="glyphicon glyphicon-chevron-down dropdown-toggle button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             </button>

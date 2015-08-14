@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   	  if @user.save
   		  session[:user_id] = @user.id
   		  redirect_to profile_path
+        flash[:notice] = "Complete your profile!"
   	  else
   		  redirect_to signup_path
   	  end

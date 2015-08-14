@@ -4,6 +4,7 @@
 		<div class="form-group">
 			<%= image_tag @post.photo.url(:small), class: "center-block" %>
 			<h3><%= @post.title %></h3><br>
+			<%= @post.created_at.strftime("%b. %Y") %><br>
 			<%= @post.body %><br>
 			<%= User.find(@post.user_id).username %><br>
 			<%= City.find(@post.city_id).city_name %><br>

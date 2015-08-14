@@ -9,7 +9,7 @@
 		<div>
 		<hr class="style-one">	
 			<% if current_user %>
-			<a class="btn btn-default" href="/profile/<%= current_user.username %>/posts/new">Write a post</a>
+			<%= link_to "Write a Post", new_user_post_path(@user, short_name: params[:short_name]), class: "btn btn-default" %>
 			<% else %>
 			<a href="/login" class="btn btn-default">Log in to write a post</a>
 			<% end %>

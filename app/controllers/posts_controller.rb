@@ -13,6 +13,12 @@ class PostsController < ApplicationController
 	end
 
 	def new
+		if params[:short_name]
+			@city = City.find_by(short_name: params[:short_name])
+		else
+			@city = City.find(1)
+		end
+		
 		@user = current_user
 		@post = Post.new
 		render :new

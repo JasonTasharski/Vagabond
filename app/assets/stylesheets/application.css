@@ -18,6 +18,8 @@
 /*Colors:
 #c7fceb <= Pale blue background color
 #ff0000 <= Logo Red*/
+*= require animate
+
 body, html {
 	width: 100%;
 	height: 100%;

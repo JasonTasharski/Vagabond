@@ -11,9 +11,10 @@
   	user_params[:first_name] = FFaker::Name.first_name
   	user_params[:last_name] = FFaker::Name.last_name
   	user_params[:email] = FFaker::Internet.email
+    user_params[:current_city] = rand(1..3)
   	user_params[:password] = "password"
   	user_params[:password_confirmation] = user_params[:password]
-  	@user = User.create(user_params)
+  	@user = User.create!(user_params)
   end
 
 
@@ -23,7 +24,7 @@
       post_params[:title] = FFaker::HipsterIpsum.sentence(1)
       post_params[:body] = FFaker::HipsterIpsum.sentence(5)
       post_params[:city_id] = rand(1..3)
-      @post = user.posts.create(post_params)
+      @post = user.posts.create!(post_params)
     end
   end
 

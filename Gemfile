@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'animate.css-rails', '~> 3.2.0'
 gem "judge"
 gem 'friendly_id'
 gem 'aws-sdk', '~> 1.6'
@@ -52,6 +53,8 @@ group :development, :test do
 
   # ?
   gem 'ffaker'
+
+  gem 'dotenv-rails'
 
 end
 

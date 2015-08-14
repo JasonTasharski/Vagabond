@@ -12,7 +12,7 @@
 			<li><a href="#"><%= link_to "Delete Post", user_post_path(@user, p), method: :delete, data: {confirm: "Are you sure?"} %></a></li>
 		</ul>
 	</div>
-	<%= image_tag @user.avatar.url(:medium) %>
+	<%= image_tag p.photo.url(:medium) %>
 	<h3 class="title-border">
 		<%= p.title %><span class="author-post"> by <%= User.find(p.user_id).username %></span><br>
 	</h3>

@@ -1,12 +1,13 @@
 <div class="col-md-12">
 	<div class="col-md-4"></div>
-	<div class="col-md-4 post post-border">
+	<div class="col-md-4 post post-border animated slideInUp">
 		<div class="form-group">
 			<h3>Create a post</h3>
-			<%= form_for :post, url: user_posts_path do |f| %>
+			<%= form_for :post, url: user_posts_path, :html => { :multipart => true } do |f| %>
 			<%= f.text_field :title, placeholder: "Title", class: "form-control" %><br>
 			<%= f.text_field :body, placeholder: "body", class: "form-control" %><br>
 			<%= f.collection_select :city_id, City.all, :id, :city_name, prompt: true, :selected => @city.id, :class => "btn btn-default dropdown-toggle post-btn" %><br>
+			<%= f.file_field :photo %><br>
 			<%= f.submit "Save Post" %>
 			<% end %>
 		</div>

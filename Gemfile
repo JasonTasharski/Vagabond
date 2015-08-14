@@ -53,5 +53,7 @@ group :development, :test do
   # ?
   gem 'ffaker'
 
+  gem 'dotenv-rails'
+
 end
 
